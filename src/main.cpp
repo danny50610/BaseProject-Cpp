@@ -3,9 +3,10 @@
 
 #ifndef TEST
 int main() {
-    printf("Rule Breaker!!!\n");
-    printf("5 + 2 = %d\n", addNumber(5, 2));
-    printf("%d\n", getTriangleType(3, 4, 5));
+    printf("請輸入聖晶石的數量： ");
+    int stoneCount;
+    scanf("%d", &stoneCount);
+    printf("你總共可以進行 %d 抽", getDrawCount(stoneCount));
     return 0;
 }
 #endif // TEST
@@ -35,4 +36,10 @@ int getTriangleType(int a, int b, int c) {
         return -1;
     }
     return -3;
+}
+
+int getDrawCount(int stoneCount) {
+    if (stoneCount < 0) return 0;
+
+    return stoneCount / 3;
 }
